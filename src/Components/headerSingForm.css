@@ -1,0 +1,64 @@
+.sing-form{
+    translate: (0%, 0px);
+    left: auto;
+}
+.create-acc{
+    display: flex;
+}
+.btn-input{
+    display: flex;
+    flex-direction: column;
+}
+.sing-form{
+          position: fixed;
+          top: 0;
+          right:0;
+          width: 450px;
+          height: 100%;
+          background-Color: #fff;
+          z-Index: 1001;
+          box-Shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          transition: right 0.5s ease;
+}
+.form{
+    margin: 30px 0 10px 20px;
+}
+.form h3{
+    font-size: 30px;
+    font-weight: 500;
+}
+.create-acc{
+
+}
+
+.name-input{
+    background-color: transparent;
+    line-height: normal;
+    border: 2px solid rgb(162, 160, 160);
+    height: 50px;
+    width: 80%;
+    font-size: 17px;
+    padding: 0 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    margin: 20px 0 10px 0;
+}
+.loggin-btn{
+    width: 80%;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+    padding: 0 2rem;
+    color: #fff;
+    background-color: #fc8019;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+    text-transform: uppercase;
+}

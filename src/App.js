@@ -1,25 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import {createBrowserRouter, Outlet} from 'react-router-dom';
+import Heading from './Components/Heading';
+import RestaurantsBody from './Components/RestaurantBody';
+import { Help } from './Components/HeaderComponent.js/Help';
+import { Search } from './Components/HeaderComponent.js/Search';
+// import ScrolCards from './Components/ScrolCards';
+import Error from './Components/HeaderComponent.js/Error';
+import RestaurantMenu from './Components/RestaurantMenu';
+import Home from './Components/HeaderComponent.js/Home';
+import {Provider} from "react-redux";
+import appStore from './Utils/appStore';
+import Cart from './Components/Cart';
 
-function App() {
+
+const App = () => {
   return (
+    <Provider store = {appStore}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Heading />
+      <Outlet/>
     </div>
+    </Provider>
   );
-}
+}; 
 
-export default App;
+
+export const appRouter = createBrowserRouter([
+  {
+    path:"/",
+    element:<App/>,
+    children: [
+      {
+        path: "/",
+        element: <RestaurantsBody/>
+      },
+      {
+        path: "/home",
+        element : <Home/>
+      },
+      {
+        path: "/help",
+        element: <Help />
+      },
+      {
+        path: "/search",
+        element: <Search/>
+      },
+      {
+      path:"/restaurants/:resId",
+       element:<RestaurantMenu/>
+      },
+      {
+      path:"/cart",
+      element:<Cart/>
+      },
+    ],
+    
+      errorElement:<Error/>,
+  }
+]);
+
+
